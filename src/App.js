@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import { usePlaidLink } from "react-plaid-link";
 import "./App.scss";
 
-function App(props) {
+export default function App() {
   const [token, setToken] = useState(null);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const onSuccess = useCallback(async (publicToken) => {
+  const onSuccess = React.useCallback(async (publicToken) => {
     setLoading(true);
     await fetch("/api/exchange_public_token", {
       method: "POST",
@@ -84,4 +84,3 @@ function App(props) {
   );
 }
 
-export default App;
