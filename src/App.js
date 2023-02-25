@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { usePlaidLink } from "react-plaid-link";
-import "./App.scss";
+import "./App.css";
 
 export default function App() {
   const [token, setToken] = useState(null);
@@ -66,8 +66,8 @@ export default function App() {
   }, [token, isOauth, ready, open]);
   
   return (
-    <div>
-      <button onClick={() => open()
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+      <button style={{marginTop: '40px' }} onClick={() => open()
         } disabled={!ready}>
         <strong>Link account</strong>
       </button>
